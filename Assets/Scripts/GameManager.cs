@@ -27,7 +27,15 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	PataGAto pataIzquierda;
 
+	[SerializeField]
+	private Animator nocheAnim;
+
+	bool noche = false;
 	int itemFalled = 0;
+
+	Animator musicAnim;
+
+	GameObject obj;
 
 	private float introCount = 0;
 	public static GameManager Instance
@@ -45,21 +53,28 @@ public class GameManager : MonoBehaviour
 	{
 		_instance = this;
 		introCount = Time.time + introTime;
+
+		if((obj = GameObject.FindGameObjectWithTag("music")) != null)
+        {
+			musicAnim = obj.GetComponent<Animator>();
+        }
+
+		if (musicAnim != null) musicAnim.SetTrigger("Play");
+
 	}
 
-	private void Update()
-	{
-		if(Time.time>= introCount)
-		{
-			playing = true;
-		}
-	}
+	public void StartPlay()
+    {
+		playing = true;
+    }
 
 	public void ItemFell()
 	{
 		itemFalled++;
 		if(itemFalled >= itemCount)
 		{
+			noche = !noche;
+			nocheAnim.SetBool("noche", noche);
 			Instantiate(items, tree);
 			itemFalled = 0;
 		}

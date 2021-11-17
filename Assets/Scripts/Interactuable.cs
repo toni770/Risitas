@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class Interactuable : MonoBehaviour
 {
+
+	[Header("PRUEBAS")]
+	[SerializeField]
+	private int tipo = 0;
+
 	[SerializeField]
 	private int toquesMaximos = 5;
 	[SerializeField]
 	private ParticleSystem ps;
 	[SerializeField]
 	private float velocity = 1;
+
+	[SerializeField]
+	private Color[] coloresBrillo;
+
+	[SerializeField]
+	private float vibrateTime = 0.2f;
+	[SerializeField]
+	private float fellTime = 0.5f;
 
 	private int toquesActuales = 0;
 	private AudioSource aud;
@@ -44,9 +57,10 @@ public class Interactuable : MonoBehaviour
 
 				GameManager.Instance.Tocar(transform.position);
 
+
 				if (toquesActuales >= toquesMaximos)
 				{
-					caido = true;
+					StartCoroutine(Fell());
 					animItem.SetBool("final", true);
 					animSprite.SetBool("final", true);
 				}
@@ -54,18 +68,37 @@ public class Interactuable : MonoBehaviour
 				animItem.SetTrigger("touched");
 				animSprite.SetTrigger("touched");
 
-				if (ps != null && !caido)
-				{
-					var main = ps.main;
-					main.startSize = (float)(0.1 + (0.1*toquesActuales));
+				CrearParticulas();
 
-					ps.Play();
-				}
-					
-
+				StartCoroutine(Vibrar());
 			}
 		}
-		
+	}
+
+	private void CrearParticulas()
+    {
+		if (ps != null && !caido)
+		{
+			var main = ps.main;
+			/* if (tipo == 0)
+				main.startSize = (float)(0.1 + (0.1 * toquesActuales));*/
+			//main.startColor = coloresBrillo[toquesActuales - 1];
+
+			ps.Play();
+		}
+	}
+
+	IEnumerator Vibrar()
+    {
+		yield return new WaitForSeconds(vibrateTime);
+		Handheld.Vibrate();
+	}
+
+	IEnumerator Fell()
+    {
+		yield return new WaitForSeconds(fellTime);
+		caido = true;
+
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
