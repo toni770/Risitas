@@ -10,10 +10,14 @@ public class CountDownController : MonoBehaviour
     Text countDownDisplay;
     Animator anim;
 
+    AudioSource aud;
+    public AudioClip goSound;
+
     private void Awake()
     {
         countDownDisplay = GetComponent<Text>();
         anim = GetComponent<Animator>();
+        aud = GetComponent<AudioSource>();
         StartCoroutine(CountDownStart());
     }
     IEnumerator CountDownStart()
@@ -22,11 +26,13 @@ public class CountDownController : MonoBehaviour
         {
             anim.SetTrigger("change");
             countDownDisplay.text = countDownTime.ToString();
-
+            aud.Play();
             yield return new WaitForSeconds(1f);
 
             countDownTime--;
         }
+        aud.clip = goSound;
+        aud.Play();
         anim.SetTrigger("change");
         countDownDisplay.text = "GO!";
 

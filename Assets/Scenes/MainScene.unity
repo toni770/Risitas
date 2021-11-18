@@ -1644,6 +1644,7 @@ GameObject:
   - component: {fileID: 1542105822}
   - component: {fileID: 1542105821}
   - component: {fileID: 1542105825}
+  - component: {fileID: 1542105826}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1683,6 +1684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownTime: 3
+  goSound: {fileID: 8300000, guid: f0122a541fc67044db5ffd02d6842c7d, type: 3}
 --- !u!114 &1542105822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,6 +1763,183 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &1542105826
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542105819}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eacef87f672d3234bbf44985229586df, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1001 &1610118467
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.906
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8641386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1148751
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965013, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965014, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: m_Name
+      value: brillo_ps
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965019, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965019, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965019, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965019, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965019, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.28991652
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595674256467965019, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e7f682115dd6a54da4ae662a302d189, type: 3}
 --- !u!1 &1716763537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,13 +2446,17 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1514523068970128385, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1656411429654083874, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1734060157417240310, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.44705883
+      value: 0.7987695
       objectReference: {fileID: 0}
     - target: {fileID: 1734060157417240310, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
@@ -2281,7 +2464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1734060157417240310, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9098039
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2028692068025026788, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: m_TagString
@@ -2357,15 +2540,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[0].b
-      value: 0.2569865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[0].g
-      value: 0.9133471
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[0].r
-      value: 0.990566
+      value: 0.85882354
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[1].a
@@ -2373,15 +2556,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[1].b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
-      propertyPath: coloresBrillo.Array.data[1].g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
+      propertyPath: coloresBrillo.Array.data[1].g
+      value: 0.2901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[1].r
-      value: 0.5169083
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[2].a
@@ -2389,7 +2572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[2].b
-      value: 0.8859249
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[2].g
@@ -2397,7 +2580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[2].r
-      value: 0.47843134
+      value: 0.21176471
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[3].a
@@ -2405,15 +2588,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[3].b
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[3].g
-      value: 0.47843134
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[3].r
-      value: 0.8348675
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[4].a
@@ -2421,15 +2604,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[4].b
-      value: 0.6904176
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[4].g
-      value: 0.47843134
+      value: 0.42745098
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499384, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: coloresBrillo.Array.data[4].r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676924208405499385, guid: bcab16a9184cf9a4baa5b238dae20418, type: 3}
       propertyPath: m_LocalPosition.x

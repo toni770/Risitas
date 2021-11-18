@@ -80,9 +80,12 @@ public class Interactuable : MonoBehaviour
 		if (ps != null && !caido)
 		{
 			var main = ps.main;
+			var emission = ps.emission;
+			emission.rateOverTime = (float)(100 + (100 * toquesActuales));
+
 			/* if (tipo == 0)
 				main.startSize = (float)(0.1 + (0.1 * toquesActuales));*/
-			//main.startColor = coloresBrillo[toquesActuales - 1];
+			main.startColor = coloresBrillo[toquesActuales - 1];
 
 			ps.Play();
 		}
