@@ -244,7 +244,7 @@ VideoPlayer:
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 0
+  m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!1 &907550787
@@ -454,9 +454,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1821595641}
     m_Modifications:
+    - target: {fileID: 2863909078569503403, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863909078569503403, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863909078569503403, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2863909078569503404, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
       propertyPath: m_Name
       value: Fade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863909078569503404, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2863909078569503407, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
       propertyPath: m_Pivot.x

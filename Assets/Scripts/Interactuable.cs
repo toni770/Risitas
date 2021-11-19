@@ -33,7 +33,6 @@ public class Interactuable : MonoBehaviour
 	private Animator animSprite;
 
 	bool caido = false;
-
 	void Awake()
     {
 		aud = GetComponent<AudioSource>();
@@ -51,7 +50,7 @@ public class Interactuable : MonoBehaviour
 	{
 		if(GameManager.Instance.playing)
 		{
-			if (!caido)
+			if (toquesActuales < toquesMaximos)
 			{
 				toquesActuales++;
 
@@ -81,8 +80,11 @@ public class Interactuable : MonoBehaviour
 		{
 			var main = ps.main;
 			var emission = ps.emission;
-			emission.rateOverTime = (float)(100 + (100 * toquesActuales));
+			var startLifeTime = main.startLifetime;
 
+			emission.rateOverTime = (float)(50 + (150 * toquesActuales));
+			main.startLifetime = (float)(1 + (0.1 * toquesActuales));
+			//startLifeTime.constantMax = (float)(1 + (0.1 * toquesActuales));
 			/* if (tipo == 0)
 				main.startSize = (float)(0.1 + (0.1 * toquesActuales));*/
 			main.startColor = coloresBrillo[toquesActuales - 1];
@@ -100,6 +102,7 @@ public class Interactuable : MonoBehaviour
 	IEnumerator Fell()
     {
 		yield return new WaitForSeconds(fellTime);
+		animItem.SetTrigger("fell");
 		caido = true;
 
 	}

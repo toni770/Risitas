@@ -18,15 +18,11 @@ public class SplashManager : MonoBehaviour
     private void Awake()
     {
         videoCount = Time.time + videoDuration;
+        //video.Play();
     }
     private void Update()
     {
         if(Time.time >= videoCount)
             fade.LoadNextLevel();
-    }
-
-    private void MainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
     }
 }

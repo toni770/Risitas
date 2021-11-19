@@ -141,6 +141,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 440666427}
     m_Modifications:
+    - target: {fileID: 2863909078569503403, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863909078569503403, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863909078569503403, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2863909078569503404, guid: 50daefc4dcbc76446b67e86aae5f8108, type: 3}
       propertyPath: m_Name
       value: Fade
@@ -361,7 +373,6 @@ MonoBehaviour:
   videoObject: {fileID: 556297541}
   videoDuration: 21
   fade: {fileID: 82145148}
-  musica: {fileID: 1881691845}
 --- !u!1 &556297538
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,11 +776,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507061649}
   m_CullTransparentMesh: 1
---- !u!82 &1881691845 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6993172426952850112, guid: 6cf11d3af8d6b034ebd424dd0cbaf9dc, type: 3}
-  m_PrefabInstance: {fileID: 6993172426150177797}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1980218161
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +924,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6993172426952850112, guid: 6cf11d3af8d6b034ebd424dd0cbaf9dc, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6993172426952850113, guid: 6cf11d3af8d6b034ebd424dd0cbaf9dc, type: 3}
       propertyPath: m_Name
       value: Musica

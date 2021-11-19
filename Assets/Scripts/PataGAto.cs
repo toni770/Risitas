@@ -17,7 +17,6 @@ public class PataGAto : MonoBehaviour
 	private void Awake()
 	{
 		originalPos = transform.position;
-		print(originalPos);
 	}
 
 	private void Update()

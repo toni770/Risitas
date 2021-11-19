@@ -18,6 +18,12 @@ public class CountDownController : MonoBehaviour
         countDownDisplay = GetComponent<Text>();
         anim = GetComponent<Animator>();
         aud = GetComponent<AudioSource>();
+
+
+    }
+
+    public void StartGame()
+    {
         StartCoroutine(CountDownStart());
     }
     IEnumerator CountDownStart()

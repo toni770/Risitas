@@ -1295,7 +1295,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -4758,7 +4758,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b22999712355474795091cef25021b4, type: 2}
+  - {fileID: 2100000, guid: a9a0bc5674916c544a0b46d57120383d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4977,13 +4977,13 @@ MonoBehaviour:
   ps: {fileID: 863363576}
   velocity: 1
   coloresBrillo:
-  - {r: 0.85882354, g: 1, b: 0, a: 1}
-  - {r: 0, g: 0.2901961, b: 1, a: 1}
-  - {r: 0.21176471, g: 1, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0.8, a: 1}
-  - {r: 0, g: 0.42745098, b: 1, a: 1}
+  - {r: 0.93333334, g: 0.91324645, b: 0.2941176, a: 0.64705884}
+  - {r: 0.82346654, g: 0.6516999, b: 0.9528302, a: 0.6392157}
+  - {r: 0.93333334, g: 0.2941176, b: 0.30050656, a: 0.64705884}
+  - {r: 0.42238775, g: 0.8867924, b: 0.3890174, a: 0.64705884}
+  - {r: 0.3820755, g: 0.835037, b: 1, a: 0.64705884}
   vibrateTime: 0.2
-  fellTime: 0.5
+  fellTime: 1
   animItem: {fileID: 4656332092148261467}
   animSprite: {fileID: 3947820509844486616}
 --- !u!1 &7758914122248086488

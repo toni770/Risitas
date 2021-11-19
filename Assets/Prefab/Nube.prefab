@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5812710649013005449}
   - component: {fileID: 5812710649013005450}
   - component: {fileID: 5812710649013005451}
+  - component: {fileID: 607535386}
   m_Layer: 0
   m_Name: Nube
   m_TagString: Untagged
@@ -96,4 +97,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.6
+  lifeTime: 3
+  isLifeTime: 0
   dir: {x: -1, y: 0}
+--- !u!95 &607535386
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5812710649013005452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bc749a4041ee7d4cb5b7d17cf300337, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

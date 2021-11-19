@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
 	private static GameManager _instance;
 
 
-	public GameObject items;
+	public GameObject itemsNoche;
+	public GameObject itemsDia;
+
 	public Transform tree;
 
 	[HideInInspector]
@@ -30,12 +32,18 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	private Animator nocheAnim;
 
-	bool noche = false;
+	public CountDownController countDown;
+
+	public Animator animLogo;
+
+	public bool noche = false;
 	int itemFalled = 0;
 
 	Animator musicAnim;
 
 	GameObject obj;
+
+	bool start = false;
 
 	private float introCount = 0;
 	public static GameManager Instance
@@ -63,7 +71,16 @@ public class GameManager : MonoBehaviour
 
 	}
 
-	public void StartPlay()
+    private void Update()
+    {
+		if (Time.time >= introCount && !start)
+		{
+			countDown.StartGame();
+			start = true;
+		}
+    }
+
+    public void StartPlay()
     {
 		playing = true;
     }
@@ -74,12 +91,25 @@ public class GameManager : MonoBehaviour
 		if(itemFalled >= itemCount)
 		{
 			noche = !noche;
-			nocheAnim.SetBool("noche", noche);
-			Instantiate(items, tree);
+			NubeSpawn.Instance.ChangeTime(noche);
+
+			StartCoroutine(cambiarEstado());
+
 			itemFalled = 0;
 		}
 	}
 
+	IEnumerator cambiarEstado()
+    {
+		nocheAnim.SetBool("noche", noche);
+		animLogo.SetBool("night", noche);
+		yield return new WaitForSeconds(1);
+
+		if (noche)
+			Instantiate(itemsNoche, tree);
+		else
+			Instantiate(itemsDia, tree);
+	}
 	public void Tocar(Vector3 pos)
 	{
 		if (IsRight(pos))
