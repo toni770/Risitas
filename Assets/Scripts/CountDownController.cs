@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CountDownController : MonoBehaviour
 {
 
-    public int countDownTime;
+    public int countDownTime = 0;
     Text countDownDisplay;
     Animator anim;
 
@@ -28,14 +28,14 @@ public class CountDownController : MonoBehaviour
     }
     IEnumerator CountDownStart()
     {
-        while(countDownTime > 0)
+        while(countDownTime <=3)
         {
             anim.SetTrigger("change");
             countDownDisplay.text = countDownTime.ToString();
             aud.Play();
             yield return new WaitForSeconds(1f);
 
-            countDownTime--;
+            countDownTime++;
         }
         aud.clip = goSound;
         aud.Play();

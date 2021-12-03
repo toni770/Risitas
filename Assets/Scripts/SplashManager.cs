@@ -12,6 +12,10 @@ public class SplashManager : MonoBehaviour
 
     public FadeController fade;
 
+    public Animator splashAnim;
+
+    public float transistionTime = 2;
+
 
     float videoCount;
 
@@ -23,6 +27,18 @@ public class SplashManager : MonoBehaviour
     private void Update()
     {
         if(Time.time >= videoCount)
-            fade.LoadNextLevel();
+        {
+            StartCoroutine(loadMenu());
+        }
+            
+    }
+
+    IEnumerator loadMenu()
+    {
+        splashAnim.SetTrigger("fade");
+
+        yield return new WaitForSeconds(transistionTime);
+
+        SceneManager.LoadScene("MainMenu");
     }
 }

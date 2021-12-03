@@ -30,5 +30,6 @@ public class FadeController : MonoBehaviour
     public void LoadSpecificScene(int scene)
     {
         StartCoroutine(loadLevel(scene));
+        PlayerPrefs.SetInt("jugado", 1);
     }
 }

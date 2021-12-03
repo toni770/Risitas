@@ -24,6 +24,9 @@ public class Interactuable : MonoBehaviour
 	[SerializeField]
 	private float fellTime = 0.5f;
 
+	[SerializeField]
+	private float gestoTime = 5f;
+
 	private int toquesActuales = 0;
 	private AudioSource aud;
 
@@ -33,9 +36,13 @@ public class Interactuable : MonoBehaviour
 	private Animator animSprite;
 
 	bool caido = false;
+
+	float gestoCount;
+
 	void Awake()
     {
 		aud = GetComponent<AudioSource>();
+		gestoCount = Time.time + gestoTime + 5;
     }
 
 	private void Update()
@@ -44,6 +51,15 @@ public class Interactuable : MonoBehaviour
 		{
 			transform.Translate(Vector2.down * Time.deltaTime * velocity, Space.World);
 		}
+		else
+		{
+			if (Time.time >= gestoCount)
+			{
+				HacerGesto();
+				gestoCount = Time.time + gestoTime;
+			}
+		}
+		
 	}
 
 	private void OnMouseDown()
@@ -53,6 +69,8 @@ public class Interactuable : MonoBehaviour
 			if (toquesActuales < toquesMaximos)
 			{
 				toquesActuales++;
+
+				gestoCount = Time.time + gestoTime;
 
 				GameManager.Instance.Tocar(transform.position);
 
@@ -91,6 +109,12 @@ public class Interactuable : MonoBehaviour
 
 			ps.Play();
 		}
+	}
+
+	private void HacerGesto()
+    {
+		animSprite.SetInteger("tipo", Random.Range(1,4));
+		animSprite.SetTrigger("gesto");
 	}
 
 	IEnumerator Vibrar()
