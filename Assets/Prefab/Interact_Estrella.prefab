@@ -4984,6 +4984,8 @@ MonoBehaviour:
   - {r: 0.3820755, g: 0.835037, b: 1, a: 0.64705884}
   vibrateTime: 0.2
   fellTime: 1
+  gestoTimeMin: 7
+  gestoTimeMax: 17
   animItem: {fileID: 4656332092148261467}
   animSprite: {fileID: 3947820509844486616}
 --- !u!1 &7758914122248086488
@@ -4997,6 +4999,7 @@ GameObject:
   - component: {fileID: 3899549826523477984}
   - component: {fileID: 1399346152739048831}
   - component: {fileID: 3947820509844486616}
+  - component: {fileID: 6796043513768438468}
   m_Layer: 0
   m_Name: Estrella
   m_TagString: Untagged
@@ -5088,6 +5091,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6796043513768438468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7758914122248086488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4607f047b5ea9704d83338a2355f0787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inter: {fileID: 3431563474967556198}
 --- !u!1 &7806391363720627464
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,13 +23,13 @@ AnimationClip:
       value: {fileID: 21300000, guid: 42a879345da703341bbfb5a1dc1e9aa2, type: 3}
     - time: 0.083333336
       value: {fileID: 21300000, guid: fa10dd3d773467a4d996c24971397282, type: 3}
-    - time: 0.41666666
-      value: {fileID: 21300000, guid: 7e51adb71ff79e840bf2bfeb9be72865, type: 3}
     - time: 0.6666667
+      value: {fileID: 21300000, guid: 7e51adb71ff79e840bf2bfeb9be72865, type: 3}
+    - time: 1.6666666
       value: {fileID: 21300000, guid: 96f32b70b931ca84fb2c7c28ddd0a0ec, type: 3}
-    - time: 1.0833334
+    - time: 2.6666667
       value: {fileID: 21300000, guid: 11fe19db7095b1b459ce69f73d903e62, type: 3}
-    - time: 1.1666666
+    - time: 3.2333333
       value: {fileID: 21300000, guid: 92c8a5e2d2b7e7d41841a6980eb5cb65, type: 3}
     attribute: m_Sprite
     path: 
@@ -61,7 +61,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.1833333
+    m_StopTime: 3.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -80,4 +80,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 3.2333333
+    functionName: ResetGestoCount
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

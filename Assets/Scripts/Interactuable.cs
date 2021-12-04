@@ -25,7 +25,9 @@ public class Interactuable : MonoBehaviour
 	private float fellTime = 0.5f;
 
 	[SerializeField]
-	private float gestoTime = 5f;
+	private float gestoTimeMin = 5f;
+	[SerializeField]
+	private float gestoTimeMax = 15f;
 
 	private int toquesActuales = 0;
 	private AudioSource aud;
@@ -42,7 +44,7 @@ public class Interactuable : MonoBehaviour
 	void Awake()
     {
 		aud = GetComponent<AudioSource>();
-		gestoCount = Time.time + gestoTime + 5;
+		gestoCount = Time.time + Random.Range(gestoTimeMin,gestoTimeMax) +3;
     }
 
 	private void Update()
@@ -55,11 +57,16 @@ public class Interactuable : MonoBehaviour
 		{
 			if (Time.time >= gestoCount)
 			{
+				ResetCount();
 				HacerGesto();
-				gestoCount = Time.time + gestoTime;
 			}
 		}
 		
+	}
+
+	private void ResetCount()
+	{
+		gestoCount = Time.time + Random.Range(gestoTimeMin, gestoTimeMax);
 	}
 
 	private void OnMouseDown()
@@ -70,7 +77,7 @@ public class Interactuable : MonoBehaviour
 			{
 				toquesActuales++;
 
-				gestoCount = Time.time + gestoTime;
+				ResetCount();
 
 				GameManager.Instance.Tocar(transform.position);
 

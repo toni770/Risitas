@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField]
 	private Animator nocheAnim;
+	[SerializeField]
+	private Animator arbolDia_anim;
 
 	public CountDownController countDown;
 
@@ -103,6 +105,7 @@ public class GameManager : MonoBehaviour
     {
 		nocheAnim.SetBool("noche", noche);
 		animLogo.SetBool("night", noche);
+		arbolDia_anim.SetBool("noche", noche);
 		yield return new WaitForSeconds(1);
 
 		if (noche)
