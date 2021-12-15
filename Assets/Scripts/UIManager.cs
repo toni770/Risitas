@@ -21,11 +21,16 @@ public class UIManager : MonoBehaviour
 
 	float splashCount;
 	public float splashDuration;
+	public GameObject formPanel;
+
+	bool form = true;
 
 	private void Awake()
 	{
 		musica = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
 		musicAnim = musica.gameObject.GetComponent<Animator>();
+
+		form = PlayerPrefs.GetInt("form", 0) == 0;
 
 		if(PlayerPrefs.GetInt("jugado",0) == 1)
         {
@@ -42,6 +47,7 @@ public class UIManager : MonoBehaviour
 
 		PlayerPrefs.SetInt("jugado", 0);
 
+
 	}
 	private void Update()
 	{
@@ -56,12 +62,17 @@ public class UIManager : MonoBehaviour
 			if (Time.time >= splashCount)
             {
 				splashAnim.SetTrigger("fade");
+                if (form)
+                {
+					formPanel.SetActive(true);
+					form = false;
+                }
 			}
 
 		}
-			
-
 	}
+
+	
 	public void Play()
 	{
 		if(!pressed)
@@ -76,5 +87,11 @@ public class UIManager : MonoBehaviour
 
 		//SceneManager.LoadScene("VideoScene");
 	}
+
+	public void Send()
+    {
+		PlayerPrefs.SetInt("form", 1);
+		formPanel.SetActive(false);
+    }
 
 }
