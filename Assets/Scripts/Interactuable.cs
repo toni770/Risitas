@@ -37,6 +37,8 @@ public class Interactuable : MonoBehaviour
 	[SerializeField]
 	private Animator animSprite;
 
+	[SerializeField] private AudioClip[] risasBebe;
+
 	bool caido = false;
 
 	float gestoCount;
@@ -75,6 +77,7 @@ public class Interactuable : MonoBehaviour
 		{
 			if (toquesActuales < toquesMaximos)
 			{
+				aud.clip = risasBebe[toquesActuales];
 				toquesActuales++;
 
 				ResetCount();

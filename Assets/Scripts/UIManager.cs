@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -22,6 +23,15 @@ public class UIManager : MonoBehaviour
 	float splashCount;
 	public float splashDuration;
 	public GameObject formPanel;
+	
+	[SerializeField] private TMP_InputField nameInput;
+	[SerializeField] private TMP_InputField surnameInput;
+	[SerializeField] private TMP_InputField mailInput;
+
+	[SerializeField] private Button sendButton;
+
+	[SerializeField] private GameObject logo;
+
 
 	bool form = true;
 
@@ -65,6 +75,7 @@ public class UIManager : MonoBehaviour
                 if (form)
                 {
 					formPanel.SetActive(true);
+					logo.SetActive(false);
 					form = false;
                 }
 			}
@@ -92,6 +103,12 @@ public class UIManager : MonoBehaviour
     {
 		PlayerPrefs.SetInt("form", 1);
 		formPanel.SetActive(false);
+		logo.SetActive(true);
+    }
+
+	public void CheckForm()
+    {
+		sendButton.interactable = nameInput.text != "" && surnameInput.text != "" && mailInput.text != "";
     }
 
 }

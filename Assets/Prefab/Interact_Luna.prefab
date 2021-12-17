@@ -352,6 +352,12 @@ MonoBehaviour:
   gestoTimeMax: 17
   animItem: {fileID: 6097677825415400273}
   animSprite: {fileID: 4170316456087439955}
+  risasBebe:
+  - {fileID: 8300000, guid: 71765b63fea6433488743144936631e9, type: 3}
+  - {fileID: 8300000, guid: 4919d341ecc89b64599a618a77a1b43a, type: 3}
+  - {fileID: 8300000, guid: 81611ae81109f1449b2b77b7bd4d1fa9, type: 3}
+  - {fileID: 8300000, guid: 8432874894a8d4842b252d4ca6a7870b, type: 3}
+  - {fileID: 8300000, guid: 3337605c69bd10042b8ee9918c5e5988, type: 3}
 --- !u!1001 &2463405932391281103
 PrefabInstance:
   m_ObjectHideFlags: 0

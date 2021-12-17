@@ -30,15 +30,13 @@ public class CountDownController : MonoBehaviour
     {
         while(countDownTime <=3)
         {
+            if(!aud.isPlaying)aud.Play();
             anim.SetTrigger("change");
             countDownDisplay.text = countDownTime.ToString();
-            aud.Play();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.8f);
 
             countDownTime++;
         }
-        aud.clip = goSound;
-        aud.Play();
         anim.SetTrigger("change");
         countDownDisplay.text = "GO!";
 

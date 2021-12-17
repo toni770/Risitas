@@ -1032,6 +1032,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 888622395011446463, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 888622395011446463, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71765b63fea6433488743144936631e9, type: 3}
+    - target: {fileID: 888622395011446463, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4919d341ecc89b64599a618a77a1b43a, type: 3}
+    - target: {fileID: 888622395011446463, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81611ae81109f1449b2b77b7bd4d1fa9, type: 3}
+    - target: {fileID: 888622395011446463, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8432874894a8d4842b252d4ca6a7870b, type: 3}
+    - target: {fileID: 888622395011446463, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3337605c69bd10042b8ee9918c5e5988, type: 3}
+    - target: {fileID: 7530134615893273100, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530134615893273100, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71765b63fea6433488743144936631e9, type: 3}
+    - target: {fileID: 7530134615893273100, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4919d341ecc89b64599a618a77a1b43a, type: 3}
+    - target: {fileID: 7530134615893273100, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81611ae81109f1449b2b77b7bd4d1fa9, type: 3}
+    - target: {fileID: 7530134615893273100, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8432874894a8d4842b252d4ca6a7870b, type: 3}
+    - target: {fileID: 7530134615893273100, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: risasBebe.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3337605c69bd10042b8ee9918c5e5988, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
 --- !u!4 &940434787 stripped
@@ -1767,7 +1815,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eacef87f672d3234bbf44985229586df, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2c4d721e786a6614e9858b0ebd777874, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
