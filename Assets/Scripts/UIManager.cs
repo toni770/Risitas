@@ -32,15 +32,18 @@ public class UIManager : MonoBehaviour
 
 	[SerializeField] private GameObject logo;
 
+	private EmailSender emailSender;
+
 
 	bool form = true;
 
 	private void Awake()
 	{
+		emailSender = GetComponent<EmailSender>();
 		musica = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
 		musicAnim = musica.gameObject.GetComponent<Animator>();
 
-		form = PlayerPrefs.GetInt("form", 0) == 0;
+		form =  PlayerPrefs.GetInt("form", 0) == 0;
 
 		if(PlayerPrefs.GetInt("jugado",0) == 1)
         {
@@ -101,9 +104,17 @@ public class UIManager : MonoBehaviour
 
 	public void Send()
     {
+		//emailSender.SendMail("Magical Smile - Nuevo usuario", CalcSubject());
 		PlayerPrefs.SetInt("form", 1);
 		formPanel.SetActive(false);
 		logo.SetActive(true);
+    }
+
+	private string CalcSubject()
+    {
+		return "Nombre: " + nameInput.text + "\n" +
+				"Apellido: " + surnameInput.text + "\n" +
+				"E-mail: " + mailInput.text + "\n";
     }
 
 	public void CheckForm()
