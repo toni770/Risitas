@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject logo;
 
 	private EmailSender emailSender;
+	private SendToGoogle sendToGoogle;
 
 
 	bool form = true;
@@ -40,10 +41,12 @@ public class UIManager : MonoBehaviour
 	private void Awake()
 	{
 		emailSender = GetComponent<EmailSender>();
+		sendToGoogle = GetComponent<SendToGoogle>();
+
 		musica = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
 		musicAnim = musica.gameObject.GetComponent<Animator>();
 
-		form =  PlayerPrefs.GetInt("form", 0) == 0;
+		form = true;// PlayerPrefs.GetInt("form", 0) == 0;
 
 		if(PlayerPrefs.GetInt("jugado",0) == 1)
         {
@@ -104,7 +107,9 @@ public class UIManager : MonoBehaviour
 
 	public void Send()
     {
-		//emailSender.SendMail("Magical Smile - Nuevo usuario", CalcSubject());
+		emailSender.SendMail("Magical Smile - Nuevo usuario", CalcSubject());
+		sendToGoogle.Send(new UserData(nameInput.text, surnameInput.text, mailInput.text));
+
 		PlayerPrefs.SetInt("form", 1);
 		formPanel.SetActive(false);
 		logo.SetActive(true);

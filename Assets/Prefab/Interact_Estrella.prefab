@@ -4984,8 +4984,8 @@ MonoBehaviour:
   - {r: 0.3820755, g: 0.835037, b: 1, a: 0.64705884}
   vibrateTime: 0.2
   fellTime: 1
-  gestoTimeMin: 7
-  gestoTimeMax: 17
+  gestoTimeMin: 5
+  gestoTimeMax: 15
   animItem: {fileID: 4656332092148261467}
   animSprite: {fileID: 3947820509844486616}
   risasBebe:

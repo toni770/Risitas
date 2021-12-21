@@ -46,7 +46,7 @@ public class Interactuable : MonoBehaviour
 	void Awake()
     {
 		aud = GetComponent<AudioSource>();
-		gestoCount = Time.time + Random.Range(gestoTimeMin,gestoTimeMax) +3;
+		gestoCount = Time.time + Random.Range(gestoTimeMin,gestoTimeMax);
     }
 
 	private void Update()

@@ -24,15 +24,8 @@ public class EmailSender : MonoBehaviour
     }
     public void SendMail(string subject, string body)
     {
-        /*  SimpleEmailSender.emailSettings.STMPClient = SMTPCLient;
-        SimpleEmailSender.emailSettings.SMTPPort = SMTPPort;
-        SimpleEmailSender.emailSettings.UserName = UserName;
-        SimpleEmailSender.emailSettings.UserPass = UserPasswd;
-
-        SimpleEmailSender.Send(To, subject, body, "", SendCompleteCallCallBack);*/
-
         emailFactory.SendEmail(SMTPCLient, SMTPPort, UserName, UserPasswd, To, subject, body);
-
+        //NativeToolkit.SendEmail(subject, body,"", To,"","");
 
     }
     private void SendCompleteCallCallBack(object sender, AsyncCompletedEventArgs e) 
