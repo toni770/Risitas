@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
 
 	[SerializeField] private GameObject logo;
 
+	[SerializeField] private GameObject backGroundImage;
+
 	private EmailSender emailSender;
 	private SendToGoogle sendToGoogle;
 
@@ -94,6 +96,7 @@ public class UIManager : MonoBehaviour
 	{
 		if(!pressed)
 		{
+			backGroundImage.SetActive(false);
 			playButton.SetActive(false);
 			videoObject.enabled = true;
 			video.Play();
