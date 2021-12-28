@@ -1160,10 +1160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db700849b18190b458fa1cb8a97f7236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SMTPCLient: smtp.gmail.com
+  SMTPCLient: smtp-mail.outlook.com
   SMTPPort: 587
-  UserName: tonimr770@gmail.com
-  UserPasswd: toni1545
+  UserName: toni-mr-1996@hotmail.com
+  UserPasswd: password1545
   To: guido.gurfinka@hotmail.com
 --- !u!114 &440666430
 MonoBehaviour:
