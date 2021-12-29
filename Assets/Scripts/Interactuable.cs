@@ -39,12 +39,15 @@ public class Interactuable : MonoBehaviour
 
 	[SerializeField] private AudioClip[] risasBebe;
 
+	private ControladorGestos gestosController;
+
 	bool caido = false;
 
 	float gestoCount;
 
 	void Awake()
     {
+		gestosController = transform.parent.GetComponent<ControladorGestos>();
 		aud = GetComponent<AudioSource>();
 		gestoCount = Time.time + Random.Range(gestoTimeMin,gestoTimeMax);
     }
@@ -60,7 +63,8 @@ public class Interactuable : MonoBehaviour
 			if (Time.time >= gestoCount)
 			{
 				ResetCount();
-				HacerGesto();
+				
+				//HacerGesto();
 			}
 		}
 		
@@ -121,7 +125,7 @@ public class Interactuable : MonoBehaviour
 		}
 	}
 
-	private void HacerGesto()
+	public void HacerGesto()
     {
 		animSprite.SetInteger("tipo", Random.Range(1,4));
 		animSprite.SetTrigger("gesto");
@@ -145,6 +149,7 @@ public class Interactuable : MonoBehaviour
 		if (collision.gameObject.CompareTag("end"))
 		{
 			GameManager.Instance.ItemFell();
+			gestosController.DeleteItem(this);
 			Destroy(gameObject);
 		}
 	}

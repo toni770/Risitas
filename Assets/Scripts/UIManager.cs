@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject logo;
 
 	[SerializeField] private GameObject backGroundImage;
+
+	[SerializeField] private GameObject loadingIcon;
 
 	private EmailSender emailSender;
 	private SendToGoogle sendToGoogle;
@@ -110,13 +113,23 @@ public class UIManager : MonoBehaviour
 
 	public void Send()
     {
+		sendButton.gameObject.SetActive(false);
+		loadingIcon.SetActive(true);
+		StartCoroutine(SendMail());
+		
+    }
+
+	IEnumerator SendMail()
+    {
+		yield return new WaitForSeconds(0.2f);
+
 		emailSender.SendMail("Magical Smile - Nuevo usuario", CalcSubject());
 		sendToGoogle.Send(new UserData(nameInput.text, surnameInput.text, mailInput.text));
 
 		PlayerPrefs.SetInt("form", 1);
 		formPanel.SetActive(false);
 		logo.SetActive(true);
-    }
+	}
 
 	private string CalcSubject()
     {
