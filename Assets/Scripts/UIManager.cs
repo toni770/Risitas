@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,10 +25,10 @@ public class UIManager : MonoBehaviour
 	float splashCount;
 	public float splashDuration;
 	public GameObject formPanel;
+
+	private bool sendingMail = false;
 	
-	[SerializeField] private TMP_InputField nameInput;
-	[SerializeField] private TMP_InputField surnameInput;
-	[SerializeField] private TMP_InputField mailInput;
+	[SerializeField] private TMP_InputField[] field;
 
 	[SerializeField] private Button sendButton;
 
@@ -37,8 +38,21 @@ public class UIManager : MonoBehaviour
 
 	[SerializeField] private GameObject loadingIcon;
 
+	[SerializeField] private float mailTime = 5;
+
+	[SerializeField] private Toggle toggle;
+
+	[SerializeField] private GameObject termsForm;
+	private float mailCount = 0;
+
 	private EmailSender emailSender;
 	private SendToGoogle sendToGoogle;
+
+	public TextMeshProUGUI errorText;
+
+	int count = 0;
+
+	bool sceneLoad = false;
 
 
 	bool form = true;
@@ -51,7 +65,7 @@ public class UIManager : MonoBehaviour
 		musica = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
 		musicAnim = musica.gameObject.GetComponent<Animator>();
 
-		form = true;// PlayerPrefs.GetInt("form", 0) == 0;
+		form = PlayerPrefs.GetInt("form", 0) == 0;
 
 		if(PlayerPrefs.GetInt("jugado",0) == 1)
         {
@@ -68,19 +82,23 @@ public class UIManager : MonoBehaviour
 
 		PlayerPrefs.SetInt("jugado", 0);
 
-
 	}
 	private void Update()
 	{
-		if (pressed)
+		if (pressed && !sceneLoad)
         {
-			fadeImage.color = Color.white;
-			if (Time.time >= videoCount)
+			if (Time.time >= videoCount && !sceneLoad)
+			{
+				fadeImage.color = Color.white;
+				sceneLoad = true;
 				fade.LoadNextLevel();
+				
+			}
+				
 		}
 		else
         {
-			if (Time.time >= splashCount)
+			if (Time.time >= splashCount && form)
             {
 				splashAnim.SetTrigger("fade");
                 if (form)
@@ -91,6 +109,14 @@ public class UIManager : MonoBehaviour
                 }
 			}
 
+		}
+
+		if(sendingMail)
+		{
+			if(Time.time >= mailCount)
+			{
+				EndSendMail();
+			}
 		}
 	}
 
@@ -108,11 +134,12 @@ public class UIManager : MonoBehaviour
 			musica.Play();
 		}
 
-		//SceneManager.LoadScene("VideoScene");
 	}
 
 	public void Send()
     {
+		sendingMail = true;
+		mailCount = Time.time + mailTime;
 		sendButton.gameObject.SetActive(false);
 		loadingIcon.SetActive(true);
 		StartCoroutine(SendMail());
@@ -123,24 +150,47 @@ public class UIManager : MonoBehaviour
     {
 		yield return new WaitForSeconds(0.2f);
 
+		sendToGoogle.Send(new UserData(field[0].text, field[1].text, field[2].text));
 		emailSender.SendMail("Magical Smile - Nuevo usuario", CalcSubject());
-		sendToGoogle.Send(new UserData(nameInput.text, surnameInput.text, mailInput.text));
+		EndSendMail();
+	}
 
+	public void EndSendMail()
+	{
 		PlayerPrefs.SetInt("form", 1);
 		formPanel.SetActive(false);
 		logo.SetActive(true);
+		sendingMail = false;
 	}
 
 	private string CalcSubject()
     {
-		return "Nombre: " + nameInput.text + "\n" +
-				"Apellido: " + surnameInput.text + "\n" +
-				"E-mail: " + mailInput.text + "\n";
+		return "Nombre: " + field[0].text + "\n" +
+				"Apellido: " + field[1].text + "\n" +
+				"E-mail: " + field[2].text + "\n";
     }
 
 	public void CheckForm()
     {
-		sendButton.interactable = nameInput.text != "" && surnameInput.text != "" && mailInput.text != "";
+		sendButton.interactable = CanSend();
     }
+
+	private bool CanSend()
+	{
+		bool result = true;
+		for(int i=0;i<field.Length;i++)
+		{
+			if(field[i].text == "") result = false;
+		}
+
+		if(!toggle.isOn) result = false;
+
+		return result;
+	}
+
+	public void OpenTerms(bool open)
+	{
+		termsForm.SetActive(open);
+	}
 
 }

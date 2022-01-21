@@ -994,13 +994,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408851205}
     m_Modifications:
+    - target: {fileID: 940434788, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
+      propertyPath: tiempoEntreGestos
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 265531991811939064, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
       propertyPath: m_Name
       value: ItemsDia
       objectReference: {fileID: 0}
     - target: {fileID: 265531991811939067, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 265531991811939067, guid: e899fd2023ea8e647a62aed3e8a5b029, type: 3}
       propertyPath: m_LocalPosition.x

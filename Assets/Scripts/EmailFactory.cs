@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Security;
@@ -12,33 +13,46 @@ public class EmailFactory : MonoBehaviour
     public TextMeshProUGUI errorText;
     public void SendEmail(string SmtpClient, int port, string user, string pass, string to, string subject, string body)
     {
-        errorText.text = "Preparing mail...";
-        MailMessage mail = new MailMessage();
-        SmtpClient SmtpServer = new SmtpClient(SmtpClient);
-        SmtpServer.Timeout = 10000;
-        SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
-        SmtpServer.UseDefaultCredentials = false;
-        SmtpServer.Port = port;
-
-        mail.From = new MailAddress(user);
-        mail.To.Add(new MailAddress(to));
-
-        mail.Subject = subject;
-        mail.Body = body;
-
-
-        SmtpServer.Credentials = new System.Net.NetworkCredential(user, pass) as ICredentialsByHost; SmtpServer.EnableSsl = true;
-        ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        try
         {
-            return true;
-        };
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient(SmtpClient);
+            SmtpServer.Timeout = 10000;
+            SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+            SmtpServer.Port = port;
 
-        mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-        errorText.text = "Sending Mail...";
-        SmtpServer.Send(mail);
-        errorText.text = "Mail Sended";
+            mail.From = new MailAddress(user);
+            mail.To.Add(new MailAddress(to));
+
+            mail.Subject = subject;
+            mail.Body = body;
+
+
+            SmtpServer.Credentials = new System.Net.NetworkCredential(user, pass); 
+
+            SmtpServer.UseDefaultCredentials = false;
+
+            SmtpServer.EnableSsl = true;
+
+            ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+            {
+                return true;
+            };
+
+            mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+
+            string userState = "test message1";
+            SmtpServer.SendAsync(mail,userState);
+            SmtpServer.Dispose();
+
+        }
+        catch (Exception e)
+        {
+            errorText.text = e.ToString();
+            throw new Exception(e.ToString());
+        }
+        
     }
-
 
     public void SendText(string phoneNumber)
     {
