@@ -92,13 +92,12 @@ public class UIManager : MonoBehaviour
 				fadeImage.color = Color.white;
 				sceneLoad = true;
 				fade.LoadNextLevel();
-				
 			}
 				
 		}
 		else
         {
-			if (Time.time >= splashCount && form)
+			if (Time.time >= splashCount)
             {
 				splashAnim.SetTrigger("fade");
                 if (form)
